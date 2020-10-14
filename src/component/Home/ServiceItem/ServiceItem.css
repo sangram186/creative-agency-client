@@ -1,0 +1,12 @@
+.single-service{
+    padding: 40px 35px;
+}
+.single-service a {
+    text-decoration: none;
+    color: black;
+}
+
+.single-service:hover{
+    box-shadow:  3px 5px 15px 7px lightgrey;
+    border-radius: 15px;
+}
