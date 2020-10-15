@@ -4,16 +4,17 @@ import BodyContent from '../BodyContent/BodyContent';
 import Sidebar from '../Sidebar/Sidebar';
 
 const AdminPage = () => {
-    const [displayItem, setDisplayItem] = useState('service-list');
+    const [adminItems, setAdminItems] = useState('service-list');
+    console.log(adminItems)
     return (
         <div>
             <Header />
             <div className='row container-fluid'>
                 <div className="col-md-2">
-                    <Sidebar item={displayItem} setItem={setDisplayItem}/>
+                    <Sidebar item={adminItems} setItem={setAdminItems}/>
                 </div>
-                <div className="col-md-10">
-                    <BodyContent  item={displayItem} setItem={setDisplayItem}/>
+                <div className="col-md-10" style={{ backgroundColor: '#F4F7FC', height: 'calc(100vh - 68px)' }}>
+                    <BodyContent  item={adminItems} setItem={setAdminItems}/>
                 </div>
             </div>
         </div>

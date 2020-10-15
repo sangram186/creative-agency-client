@@ -8,7 +8,7 @@ const Banner = () => {
             <div className="col-md-5">
                 <h1>Let’s Grow Your <br/> Brand To TheNext Level</h1>
                 <p>Lorem ipsum dolor sit amet, <br/> consectetur adipiscing elit. Purus commodo <br/> ipsum duis laoreet maecenas. Feugiat </p>
-                <button className="btn">Hire Us</button>
+                <button className="btn black-button">Hire Us</button>
             </div>
             <div className="col-md-7 d-flex justify-content-end">
                 <img className="img-fluid" src={frame} alt=""/>

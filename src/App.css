@@ -6,3 +6,39 @@
   background: #111430;
   padding: 6px 32px;
 }
+
+.selected-button{
+  color: #009444 !important;
+}
+.selected-button:focus{
+  text-decoration: none;
+}
+button:hover{
+  text-decoration: none !important;
+  color: black !important;
+}
+button{
+  font-weight: 600 !important;
+}
+.table td, .table th {
+  vertical-align: middle !important;
+}
+.service-list{
+    margin: 20px;
+    background: white;
+    padding: 19px;
+    border-radius: 15px
+}
+.add-service{
+  background: white;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 15px;
+}
+.make-admin{
+  background: white;
+    margin: 28px 21px;
+    padding: 24px;
+    height: 315px;
+    border-radius: 15px;
+}

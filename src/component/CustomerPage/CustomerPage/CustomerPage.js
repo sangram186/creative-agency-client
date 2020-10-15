@@ -12,7 +12,7 @@ const CustomerPage = () => {
                 <div className="col-md-2">
                     <Sidebar item={displayItem} setItem={setDisplayItem}/>
                 </div>
-                <div className="col-md-10">
+                <div className="col-md-10"  style={{backgroundColor: '#F4F7FC', height: 'calc(100vh - 68px)'}}>
                     <BodyContent  item={displayItem} setItem={setDisplayItem}/>
                 </div>
             </div>

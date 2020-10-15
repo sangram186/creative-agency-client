@@ -24,9 +24,12 @@ const Navbar = () => {
                         <Link className="nav-link ml-4" href="#">Our Team</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link ml-4" href="#">Contact Us</Link>
+                        <Link className="nav-link ml-4" to='/customer'>Dashboard</Link>
                     </li>
-                    <button className='btn ml-4'><Link to='/login'>Login</Link></button>
+                    <li className="nav-item">
+                        <Link className="nav-link ml-4" to='/admin'>Admin</Link>
+                    </li>
+                    <Link to='/login'><button className='btn ml-4 black-button'>Login</button></Link>
                 </ul>
             </div>
         </nav>

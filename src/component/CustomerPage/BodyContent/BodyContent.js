@@ -6,7 +6,7 @@ import Service from '../Service/Service';
 const BodyContent = ({item, setItem}) => {
     console.log(item)
     return (
-        <div style={{backgroundColor: '#F4F7FC', height: 'calc(100vh - 68px)'}}>
+        <div>
             {
                 (item === 'order' && <Order></Order>) || 
                 (item === 'service' && <Service></Service>) || 
