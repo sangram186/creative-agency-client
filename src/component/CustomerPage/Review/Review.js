@@ -1,9 +1,9 @@
 import React from 'react';
 
-const FooterForm = () => {
+const Review = () => {
     return (
-        <div>
-            <form>
+        <div className='w-50'>
+            <form className='pt-4 pl-4'>
                 <div class="form-group">
                     <input type="email" class="form-control p-3" id="exampleFormControlInput1" placeholder="Your email address" />
                 </div>
@@ -15,9 +15,8 @@ const FooterForm = () => {
                 </div>
                 <button className='btn black-button'>Send</button>
             </form>
-            
         </div>
     );
 };
 
-export default FooterForm;
+export default Review;

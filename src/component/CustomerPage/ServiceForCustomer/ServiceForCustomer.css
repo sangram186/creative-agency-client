@@ -1,0 +1,18 @@
+.single-service{
+    margin: 22px;
+    border-radius: 10px;
+    background: white;
+    padding: 16px;
+}
+.pending , .done{
+    background: #FFE3E3;
+    color: #FF4545;
+    display: inline-block;
+    height: 34px;
+    padding: 7px;
+    border-radius: 5px;
+}
+.done{
+    background: #C6FFE0;
+    color: #009444;
+}
