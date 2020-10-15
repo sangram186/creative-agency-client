@@ -8,13 +8,6 @@ const PrivateRoute = ({ children, ...rest }) => {
 
     const infoFromSession = sessionStorage.getItem('userInfo');
 
-    const isLoggedIn = () => {
-        // const userInfoFromSession =(infoFromSession, JSON.parse(infoFromSession));
-        // if(!userInfoFromSession.email) {
-        //     return false;
-        // }
-    }
-
     return (
         <Route
             {...rest}
