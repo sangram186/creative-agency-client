@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Sidebar = ({item, setItem}) => {
-    console.log(item)
     return (
         <div className='d-flex flex-column align-items-start p-3 sidebar mt-5'>
             <button onClick={() => setItem('service-list')} className={`btn btn-link ${item === 'service-list' && 'selected-button'}`}>Service List</button>

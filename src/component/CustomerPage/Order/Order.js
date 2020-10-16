@@ -27,6 +27,7 @@ const Order = () => {
         formData.append('order', orderDetails.order);
         formData.append('details', orderDetails.details);
         formData.append('price', orderDetails.price);
+        formData.append('role', 'Pending');
 
         fetch('http://localhost:5000/customerOrder', {
             method: 'POST',
@@ -42,23 +43,11 @@ const Order = () => {
                 console.error(error)
             })
 
-        // fetch('http://localhost:5000/customerOrder', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type' : 'application/json' },
-        //     body: JSON.stringify(orderDetails),
-        // })
-        // .then(res => res.json())
-        // .then(data => {
-        //     if(data) {
-        //         alert('Order submitted')
-        //     }
-        // })
         e.preventDefault();
     }
 
     const handleFileChange = e => {
         const file = e.target.files[0];
-
         setFile(file)
     }
 
@@ -78,7 +67,7 @@ const Order = () => {
             </div>
             <div className='d-flex'>
                 <input required onBlur={handleOrderInput} name='price' type="text" className='w-50' placeholder="Price" />
-                <input required onChange={handleFileChange} type="file" className='order-upload-button' placeholder="Your Order" />
+                <input onChange={handleFileChange} type="file" className='order-upload-button' placeholder="Your Order" />
             </div>
             <button type="submit" className='btn black-button mt-4'>Send</button>
         </form>

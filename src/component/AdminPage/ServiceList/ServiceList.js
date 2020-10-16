@@ -1,44 +1,56 @@
-import React, { Children } from 'react';
+import React, { Children, useEffect } from 'react';
 import { useState } from 'react';
 
 const fakeServiceList = [
-        {
-            name: 'Sufi Ahmed Hamim',
-            email: 'sufi@gmail.com',
-            service: 'Graphic Design',
-            projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            status: ['Pending', 'Done', 'On going'],
-        },
-        {
-            name: 'Sufi Ahmed Hamim',
-            email: 'sufi@gmail.com',
-            service: 'Graphic Design',
-            projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            status: ['Pending', 'Done', 'On going'],
-        },
-        {
-            name: 'Sufi Ahmed Hamim',
-            email: 'sufi@gmail.com',
-            service: 'Graphic Design',
-            projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            status: ['Pending', 'Done', 'On going'],
-        },
-        {
-            name: 'Sufi Ahmed Hamim',
-            email: 'sufi@gmail.com',
-            service: 'Graphic Design',
-            projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            status: ['Pending', 'Done', 'On going'],
-        },
-    ]
+    {
+        name: 'Sufi Ahmed Hamim',
+        email: 'sufi@gmail.com',
+        service: 'Graphic Design',
+        projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        status: ['Pending', 'Done', 'On going'],
+    },
+    {
+        name: 'Sufi Ahmed Hamim',
+        email: 'sufi@gmail.com',
+        service: 'Graphic Design',
+        projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        status: ['Pending', 'Done', 'On going'],
+    },
+    {
+        name: 'Sufi Ahmed Hamim',
+        email: 'sufi@gmail.com',
+        service: 'Graphic Design',
+        projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        status: ['Pending', 'Done', 'On going'],
+    },
+    {
+        name: 'Sufi Ahmed Hamim',
+        email: 'sufi@gmail.com',
+        service: 'Graphic Design',
+        projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        status: ['Pending', 'Done', 'On going'],
+    },
+]
+
 const ServiceList = () => {
 
-    // const [statusItem, setStatusItem] = useState('pending');
-    // console.log(statusItem)
-    // const handleChange = e => {
-    //     setStatusItem(e.target.value)
-    // }
-    
+    const [allOrders, setAllOrders] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/allOrders')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setAllOrders(data)
+            })
+    }, []);
+
+    const [role, setRole] = useState('Done');
+
+    const handleChange = e => {
+        console.log(e.target.value)
+    }
+
     return (
         <div className='service-list'>
             <table class="table">
@@ -52,31 +64,34 @@ const ServiceList = () => {
                     </tr>
                 </thead>
                 {
-                    fakeServiceList.map((list, index) => {
-                        const { name, email, projectDetails, service, status } = list;
-                        
+                    allOrders.map((orderList, index) => {
+                        const { name, email, details, order } = orderList;
+
                         return (
-                            <tbody>
-                                <tr>
-                                    <th scope="row">{name}</th>
-                                    <td>{email}</td>
-                                    <td>{service}</td>
-                                    <td>{projectDetails}</td>
-                                    <td>
-                                        <select>
-                                            <option>{status[0]}</option>
-                                            <option>{status[1]}</option>
-                                            <option>{status[2]}</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </tbody>
+
+                            allOrders.length > 0 ?
+                                < tbody >
+                                    <tr>
+                                        <th scope="row">{name}</th>
+                                        <td>{email}</td>
+                                        <td>{order}</td>
+                                        <td>{details}</td>
+                                        <td>
+                                            <select onChange={handleChange}>
+                                                <option>Pending</option>
+                                                <option>Done</option>
+                                                <option>On going</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody> :
+                                <h1 className='w-100 h-100 text-center text-white mt-5 p-3' style={{ background: '#009444' }}>Loading Data...</h1>
                         )
                     })
                 }
             </table>
 
-        </div>
+        </div >
     );
 };
 
