@@ -42,3 +42,26 @@ button{
     height: 315px;
     border-radius: 15px;
 }
+
+input[type="file"]{
+  display: none;
+}
+.upload-btn{
+  color:#009444;
+  background: #DEFFED;
+  margin-bottom: 0;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  font-size: 20px;
+}
+.banner h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+.banner p{
+  font-size: 20px;
+}
+footer p{
+  margin-bottom: 0 !important;
+}

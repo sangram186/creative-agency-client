@@ -1,12 +1,14 @@
 import React from 'react';
 import './Sidebar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faIgloo, faAllergies } from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = ({item, setItem}) => {
     return (
-        <div style={{height: 'calc(100vh - 68px)'}} className='d-flex flex-column align-items-start p-3 sidebar'>
-            <button onClick={() => setItem('order')} className={`btn btn-link ${item === 'order' && 'selected-button'}`}>Order</button>
-            <button onClick={() => setItem('service')} className={`btn btn-link ${item === 'service' && 'selected-button'}`}>Service list</button>
-            <button onClick={() => setItem('review')} className={`btn btn-link ${item === 'review' && 'selected-button'}`}>Review</button>
+        <div className='d-flex flex-column align-items-start sidebar'>
+            <button onClick={() => setItem('order')} className={`btn btn-link ${item === 'order' && 'selected-button'}`}><FontAwesomeIcon icon={faShoppingCart} /> Order</button>
+            <button onClick={() => setItem('service')} className={`btn btn-link ${item === 'service' && 'selected-button'}`}><FontAwesomeIcon icon={faIgloo} /> Service list</button>
+            <button onClick={() => setItem('review')} className={`btn btn-link ${item === 'review' && 'selected-button'}`}><FontAwesomeIcon icon={faAllergies} /> Review</button>
         </div>
     );
 };

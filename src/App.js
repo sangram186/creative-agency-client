@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './component/MediaQueries/MediaQueries.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,7 +20,7 @@ function App() {
     name: '',
     email: '',
     photo: '',
-    error: '',
+    isAdmin: '',
   })
 
   return (
@@ -31,8 +32,8 @@ function App() {
           </PrivateRoute>
 
           <PrivateRoute path="/admin">
-            <AdminPage />
-          </PrivateRoute>
+              <AdminPage />
+            </PrivateRoute>
 
           <Route path='/login'>
             <Login />

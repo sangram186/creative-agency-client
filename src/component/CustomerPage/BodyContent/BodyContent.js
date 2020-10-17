@@ -4,7 +4,6 @@ import Review from '../Review/Review';
 import Service from '../Service/Service';
 
 const BodyContent = ({item, setItem}) => {
-    console.log(item)
     return (
         <div>
             {

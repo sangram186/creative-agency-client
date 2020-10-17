@@ -4,7 +4,7 @@ import BodyContent from '../BodyContent/BodyContent';
 import Sidebar from '../Sidebar/Sidebar';
 
 const AdminPage = () => {
-    const [adminItems, setAdminItems] = useState('add-service');
+    const [adminItems, setAdminItems] = useState('service-list');
     return (
         <div>
             <Header />

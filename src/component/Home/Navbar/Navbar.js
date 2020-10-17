@@ -1,8 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logos/logo.png';
+import * as firebase from "firebase/app";
+import "firebase/auth";
 
 const Navbar = () => {
+
+    const infoFromSession = sessionStorage.getItem('userInfo');
+    const userData = JSON.parse(infoFromSession);
+
+    const handleLogOut = () => {
+        firebase.auth().signOut().then(function() {
+            sessionStorage.removeItem('userInfo');
+            window.location.reload();
+          }).catch(function(error) {
+            // An error happened.
+          });
+    }
+
     return (
         <nav className="container navbar navbar-expand-lg navbar-light bg-transparent mb-5">
             <Link className="navbar-brand" to="/">
@@ -26,10 +41,10 @@ const Navbar = () => {
                     <li className="nav-item">
                         <Link className="nav-link ml-4" to='/customer'>Dashboard</Link>
                     </li>
-                    <li className="nav-item">
-                        <Link className="nav-link ml-4" to='/admin'>Admin</Link>
-                    </li>
-                    <Link to='/login'><button className='btn ml-4 black-button'>Login</button></Link>
+                    {
+                        infoFromSession ? <button onClick={handleLogOut} className='btn ml-4 black-button'>Logout</button> :
+                        <Link to='/login'><button className='btn ml-4 black-button'>Login</button></Link>
+                    }
                 </ul>
             </div>
         </nav>

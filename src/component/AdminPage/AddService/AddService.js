@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 const AddService = () => {
     const [file, setFile] = useState(null);
@@ -48,9 +50,10 @@ const AddService = () => {
                         <label for="exampleFormControlInput1">Service Title</label>
                         <input name='title' required onBlur={handleAddInput} type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title" />
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="exampleFormControlFile1">Example file input</label>
-                        <input onChange={handleAddFile} type="file" class="form-control-file" id="exampleFormControlFile1" />
+                    <div class="form-group col-md-4">
+                        <label for="exampleFormControlInput1">Icon</label>
+                        <label className='w-50 upload-btn p-1' for='file'><FontAwesomeIcon className='mr-3' icon={faUpload} />Upload Image</label>
+                        <input onChange={handleAddFile} id='file' class="form-control-file" accept='image/*' type="file" />
                     </div>
                     <div class="form-group col-md-6">
                         <label for="exampleFormControlInput1">Description</label>

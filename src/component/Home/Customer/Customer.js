@@ -8,12 +8,19 @@ import './Customer.css';
 
 const Customer = () => {
     return (
-        <div style={{width: '970px' }} className="row customer m-auto mb-5 d-flex justify-content-between align-items-center">
-            <div className="col-md-2"><img src={slack} alt=""/></div>
-            <div className="col-md-2"><img src={google} alt=""/></div>
-            <div className="col-md-2"><img src={uber} alt=""/></div>
-            <div className="col-md-2"><img src={netflix} alt=""/></div>
-            <div className="col-md-2"><img src={airbnb} alt=""/></div>
+        // <div className="container row customer m-auto mb-5 d-flex justify-content-between align-items-center">
+        //     <div className="col-md-2 col-xs-6"><img className="image-fluid" src={slack} alt=""/></div>
+        //     <div className="col-md-2 "><img className="image-fluid" src={google} alt=""/></div>
+        //     <div className="col-md-2 "><img className="image-fluid" src={uber} alt=""/></div>
+        //     <div className="col-md-2 "><img className="image-fluid" src={netflix} alt=""/></div>
+        //     <div className="col-md-2 "><img className="image-fluid" src={airbnb} alt=""/></div>
+        // </div>
+        <div className="container customer m-auto mt-5 d-flex justify-content-between align-items-center">
+            <div><img className="image-fluid px-3" src={slack} alt=""/></div>
+            <div><img className="image-fluid px-3" src={google} alt=""/></div>
+            <div><img className="image-fluid px-3" src={uber} alt=""/></div>
+            <div><img className="image-fluid px-3" src={netflix} alt=""/></div>
+            <div><img className="image-fluid px-3" src={airbnb} alt=""/></div>
         </div>
     );
 };

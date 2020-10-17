@@ -7,7 +7,7 @@ import Customer from '../Customer/Customer';
 
 const Header = () => {
     return (
-        <div className='header-bg mb-5'>
+        <div className='header-bg mb-5 pb-3'>
             <Navbar />
             <Banner />
         </div>

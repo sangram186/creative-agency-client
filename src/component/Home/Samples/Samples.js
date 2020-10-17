@@ -3,21 +3,22 @@ import Carousel from 'react-elastic-carousel';
 import './Samples.css';
 import carousel1 from '../../../images/carousel-1.png';
 import carousel2 from '../../../images/carousel-2.png';
-import carousel3 from '../../../images/carousel-3.png';
+import carousel4 from '../../../images/carousel-4.png';
+import carousel5 from '../../../images/carousel-5.png';
 
 const images = [
     { img: carousel1 },
     { img: carousel2 },
-    { img: carousel3 },
+    { img: carousel4 },
+    { img: carousel5 },
     { img: carousel1 },
     { img: carousel2 },
-    { img: carousel3 },
+    { img: carousel4 },
+    { img: carousel5 },
+    { img: carousel1 },
     { img: carousel2 },
-    { img: carousel3 },
-    { img: carousel2 },
-    { img: carousel3 },
-    { img: carousel2 },
-    { img: carousel3 },
+    { img: carousel4 },
+    { img: carousel5 },
 ]
 
 const breakPoints = [

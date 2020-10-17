@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Order.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 const Order = () => {
     const [file, setFile] = useState(null);
@@ -52,7 +54,7 @@ const Order = () => {
     }
 
     return (
-        <form className='w-50 p-5 order-page' onSubmit={handleSubmit}>
+        <form className='p-5 order-page' onSubmit={handleSubmit}>
             <div class="form-group">
                 <input required onBlur={handleOrderInput} name='name' type="text" class="form-control" placeholder="Your name / company’s name" />
             </div>
@@ -66,8 +68,9 @@ const Order = () => {
                 <textarea required onBlur={handleOrderInput} name='details' class="form-control" rows="4" placeholder="Project Details"></textarea>
             </div>
             <div className='d-flex'>
-                <input required onBlur={handleOrderInput} name='price' type="text" className='w-50' placeholder="Price" />
-                <input onChange={handleFileChange} type="file" className='order-upload-button' placeholder="Your Order" />
+                <input required onBlur={handleOrderInput} name='price' type="text" className='w-50 mr-3' placeholder="Price" />
+                <label className='w-50 upload-btn ' for='file'><FontAwesomeIcon className='mr-3' icon={faUpload} /> Upload Project File</label>
+                <input onChange={handleFileChange} id='file' accept='image/*' type="file" />
             </div>
             <button type="submit" className='btn black-button mt-4'>Send</button>
         </form>

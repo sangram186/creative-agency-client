@@ -52,24 +52,24 @@ const ServiceList = () => {
     }
 
     return (
-        <div className='service-list'>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email Address</th>
-                        <th scope="col">Service</th>
-                        <th scope="col">Project Details</th>
-                        <th scope="col">Status</th>
-                    </tr>
-                </thead>
-                {
-                    allOrders.map((orderList, index) => {
-                        const { name, email, details, order } = orderList;
+        <div className='service-list table-responsive-sm'>
 
-                        return (
+            {   allOrders.length > 0 ?
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email Address</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">Project Details</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    {
+                        allOrders.map((orderList, index) => {
+                            const { name, email, details, order } = orderList;
 
-                            allOrders.length > 0 ?
+                            return (
                                 < tbody >
                                     <tr>
                                         <th scope="row">{name}</th>
@@ -84,13 +84,13 @@ const ServiceList = () => {
                                             </select>
                                         </td>
                                     </tr>
-                                </tbody> :
-                                <h1 className='w-100 h-100 text-center text-white mt-5 p-3' style={{ background: '#009444' }}>Loading Data...</h1>
-                        )
-                    })
-                }
-            </table>
-
+                                </tbody>
+                            )
+                        })
+                    }
+                </table> :
+                <h1 className='w-100 h-100 text-center text-white mt-5 p-3' style={{ background: '#009444' }}>Loading Data...</h1>
+            }
         </div >
     );
 };
