@@ -1,43 +1,12 @@
 import React, { Children, useEffect } from 'react';
 import { useState } from 'react';
 
-const fakeServiceList = [
-    {
-        name: 'Sufi Ahmed Hamim',
-        email: 'sufi@gmail.com',
-        service: 'Graphic Design',
-        projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        status: ['Pending', 'Done', 'On going'],
-    },
-    {
-        name: 'Sufi Ahmed Hamim',
-        email: 'sufi@gmail.com',
-        service: 'Graphic Design',
-        projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        status: ['Pending', 'Done', 'On going'],
-    },
-    {
-        name: 'Sufi Ahmed Hamim',
-        email: 'sufi@gmail.com',
-        service: 'Graphic Design',
-        projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        status: ['Pending', 'Done', 'On going'],
-    },
-    {
-        name: 'Sufi Ahmed Hamim',
-        email: 'sufi@gmail.com',
-        service: 'Graphic Design',
-        projectDetails: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        status: ['Pending', 'Done', 'On going'],
-    },
-]
-
 const ServiceList = () => {
 
     const [allOrders, setAllOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://evening-basin-84570.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => {
                 console.log(data)

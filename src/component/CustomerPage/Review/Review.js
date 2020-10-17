@@ -14,7 +14,7 @@ const Review = () => {
     }
 
     const handleSubmit = e => {
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://evening-basin-84570.herokuapp.com/reviews', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(review)

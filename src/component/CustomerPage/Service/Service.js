@@ -29,7 +29,7 @@ const Service = () => {
     console.log(serviceData)
 
     useEffect(() => {
-        fetch('http://localhost:5000/orderData', {
+        fetch('https://evening-basin-84570.herokuapp.com/orderData', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)

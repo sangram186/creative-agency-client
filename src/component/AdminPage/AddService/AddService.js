@@ -24,7 +24,7 @@ const AddService = () => {
         formData.append('title', addService.title);
         formData.append('description', addService.description);
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://evening-basin-84570.herokuapp.com/services', {
             method: 'POST',
             body: formData
         })

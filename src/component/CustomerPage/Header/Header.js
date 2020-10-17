@@ -7,7 +7,7 @@ const Header = () => {
     const [admins, setAdmins] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allAdmins')
+        fetch('https://evening-basin-84570.herokuapp.com/allAdmins')
             .then(response => response.json())
             .then(data => setAdmins(data));
     }, [])

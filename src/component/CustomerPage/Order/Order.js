@@ -31,7 +31,7 @@ const Order = () => {
         formData.append('price', orderDetails.price);
         formData.append('role', 'Pending');
 
-        fetch('http://localhost:5000/customerOrder', {
+        fetch('https://evening-basin-84570.herokuapp.com/customerOrder', {
             method: 'POST',
             body: formData
         })
